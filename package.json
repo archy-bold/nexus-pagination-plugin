@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "A plugin for adding offset-based pagination to your nexus types",
   "repository": "https://github.com/echobind/nexus-pagination-plugin",
+  "main": "src/index.ts",
   "author": "Echobind",
   "license": "MIT",
   "dependencies": {
