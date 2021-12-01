@@ -1,0 +1,15 @@
+{
+  "name": "nexus-pagination-plugin",
+  "version": "0.0.1",
+  "description": "A plugin for adding offset-based pagination to your nexus types",
+  "repository": "https://github.com/echobind/nexus-pagination-plugin",
+  "author": "Echobind",
+  "license": "MIT",
+  "dependencies": {
+    "nexus": "^1.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.3.0",
+    "eslint-plugin-echobind": "^0.2.1"
+  }
+}
