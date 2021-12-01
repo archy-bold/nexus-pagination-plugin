@@ -701,7 +701,7 @@ eslint-module-utils@^2.7.1:
     find-up "^2.1.0"
     pkg-dir "^2.0.0"
 
-eslint-plugin-echobind@^0.2.1:
+eslint-plugin-echobind@0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-echobind/-/eslint-plugin-echobind-0.2.1.tgz#54c41f01e3ff0a7208a462a948c42034deb03559"
   integrity sha512-oQ41Ix+kgcGRyrS/ymxJlim+1/E1COTcQqeBbXPcS4dph+KLJGAgIF3j5W1V67GT9oCF4qg5d81BxeRIYBMiiA==
@@ -890,7 +890,7 @@ eslint-visitor-keys@^3.1.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.1.0.tgz#eee4acea891814cda67a7d8812d9647dd0179af2"
   integrity sha512-yWJFpu4DtjsWKkt5GeNBBuZMlNcYVs6vRCLoCVEJrTjaSB6LC98gFipNK/erM2Heg/E8mIK+hXG/pJMLK+eRZA==
 
-eslint@^8.3.0:
+eslint@8.3.0:
   version "8.3.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.3.0.tgz#a3c2409507403c1c7f6c42926111d6cbefbc3e85"
   integrity sha512-aIay56Ph6RxOTC7xyr59Kt3ewX185SaGnAr8eWukoPLeriCrvGjvAubxuvaXOfsxhtwV5g0uBOsyhAom4qJdww==
@@ -1456,10 +1456,10 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
 
-nexus@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/nexus/-/nexus-1.1.0.tgz#3d8fa05c29e7a61aa55f64ef5e0ba43dd76b3ed6"
-  integrity sha512-jUhbg22gKVY2YwZm726BrbfHaQ7Xzc0hNXklygDhuqaVxCuHCgFMhWa2svNWd1npe8kfeiu5nbwnz+UnhNXzCQ==
+nexus@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/nexus/-/nexus-1.0.0.tgz#633b39abae1d7e9472ca40e37bb5d3e1263f6aa3"
+  integrity sha512-Toa91s9BJsX8pDX34QkOyKdnw8MmuOQkEboZMKSxvF9mWuAFkY74Zj1ssaexeV7yTQ7HoLQYUQ00FaWzXPmggQ==
   dependencies:
     iterall "^1.3.0"
     tslib "^2.0.3"
@@ -1874,6 +1874,11 @@ type-fest@^0.20.2:
   version "0.20.2"
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.20.2.tgz#1bf207f4b28f91583666cb5fbd327887301cd5f4"
   integrity sha512-Ne+eE4r0/iWnpAxD852z3A+N0Bt5RN//NjJwRd2VFHEmrywxf5vsZlh4R6lixl6B+wz/8d+maTSAkN1FIkI3LQ==
+
+typescript@4.5.2:
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.2.tgz#8ac1fba9f52256fdb06fb89e4122fa6a346c2998"
+  integrity sha512-5BlMof9H1yGt0P8/WF+wPNw6GfctgGjXp5hkblpyT+8rkASSmkUKMXrxR0Xg8ThVCi/JnHQiKXeBaEwCeQwMFw==
 
 unbox-primitive@^1.0.1:
   version "1.0.1"

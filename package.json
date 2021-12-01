@@ -6,10 +6,14 @@
   "author": "Echobind",
   "license": "MIT",
   "dependencies": {
-    "nexus": "^1.1.0"
+    "nexus": "1.0.0"
   },
   "devDependencies": {
-    "eslint": "^8.3.0",
-    "eslint-plugin-echobind": "^0.2.1"
+    "eslint": "8.3.0",
+    "eslint-plugin-echobind": "0.2.1",
+    "typescript": "4.5.2"
+  },
+  "peerDependencies": {
+    "nexus": "1.0.0"
   }
 }
