@@ -90,7 +90,160 @@ export const UsersQuery = queryField((t) => {
 })
 ```
 
+## `resolve: (root, args, ctx) => ...`
+
+`t.paginatedQueryResult` wraps the resolve function passed in the query config and adds the following fields on the context object.
+
+### `ctx.paginationParams: {take: number, skip: number}`
+  
+* `take` specifies the page size
+* `skip` specifies how many to skip based on the page size and page arguments
+  
+### `ctx.calculatePageInfo: (count: number) => PageInfo`
+
+* `count` specifies the total count of records in the DB
+* Returns type [`PageInfo`](#pageinfo)
+
+## Generated Types
+
+### `PageInfo`
+
+```
+objectType({
+  name: 'PageInfo',
+  definition(t) {
+    t.int('page');
+    t.int('nextPage');
+    t.int('totalPages');
+  },
+})
+```
+
+### `Paginated${targeTypename}s`
+
+```
+objectType({
+  name: generatedTypeName,
+  definition(t2) {
+    t2.nonNull.list.field('results', {
+      type: fieldConfig.type,
+      description: `Collection of ${fieldName}`,
+    });
+
+    t2.nonNull.field('pageInfo', {
+      type: 'PageInfo',
+      description: 'Pagination information',
+    });
+  },
+})
+```
+
+For a paginated field defined on `Query` like this:
+
+```ts
+queryField((t) => {
+  t.paginatedQueryField('foos', {
+    type: 'Foo',
+    // ... any additional query config
+  });
+});
+```
+
+The following types would be generated:
+
+```gql
+"""
+Pagination info
+"""
+type PageInfo {
+  nextPage: Int
+  page: Int
+  totalPages: Int
+}
+
+type PaginatedFoos {
+  """
+  Pagination information
+  """
+  pageInfo: PageInfo!
+
+  """
+  Collection of foos
+  """
+  results: [Foo]!
+}
+
+type Query {
+  """ ... other Query fields """
+
+  foos(
+    page: Int = 1
+    pageSize: Int = 25
+  ): PaginatedFoos
+}
+```
+
+Note that the collection type will be added to whatever parent type is specified. This means that if you were to define a paginated field on another object rather than on `Query` like this:
+
+```ts
+objectType({
+  type: 'Bar',
+  definition(t) {
+    // ... other definitions
+    t.paginatedQueryField('foos', {
+      type: 'Foo',
+      // ... any additional query config
+    });
+  }
+})
+```
+
+The `foos` query would be added to the `Bar` type rather than the `Query` type:
+
+```gql
+type Bar {
+  """ ... other Bar fields """
+
+  foos(
+    page: Int = 1
+    pageSize: Int = 25
+  ): PaginatedFoos
+}
+```
+
 ## Options
 
+### `defaultPageSize: number`
 
+Used to specify a different default for the generated `pageSize` argument. Defaults to 25
 
+Global usage:
+
+```ts
+paginationPlugin({
+  defaultPageSize: 10
+})
+```
+
+Field usage:
+
+```ts
+export const UsersQuery = queryField((t) => {
+  t.paginatedQueryResult('users', {
+    // ... any additional query fields
+    defaultPageSize: 10
+  })  
+})
+```
+
+### `getGeneratedTypename: (targetTypename: string) => string`
+
+Used to specify a different generated typename for the paginated types. Defaults to `Paginated${targetTypename}s`
+
+Usage:
+
+```ts
+paginationPlugin({
+  getGeneratedTypename: (targetTypename) => `${targetTypename}sPaginated`
+})
+```
