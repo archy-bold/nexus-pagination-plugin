@@ -108,7 +108,7 @@ export const UsersQuery = queryField((t) => {
 
 ### `PageInfo`
 
-```
+```ts
 objectType({
   name: 'PageInfo',
   definition(t) {
@@ -121,7 +121,7 @@ objectType({
 
 ### `Paginated${targeTypename}s`
 
-```
+```ts
 objectType({
   name: generatedTypeName,
   definition(t2) {
@@ -152,9 +152,6 @@ queryField((t) => {
 The following types would be generated:
 
 ```gql
-"""
-Pagination info
-"""
 type PageInfo {
   nextPage: Int
   page: Int
@@ -162,14 +159,7 @@ type PageInfo {
 }
 
 type PaginatedFoos {
-  """
-  Pagination information
-  """
   pageInfo: PageInfo!
-
-  """
-  Collection of foos
-  """
   results: [Foo]!
 }
 
@@ -177,7 +167,7 @@ type Query {
   """ ... other Query fields """
 
   foos(
-    page: Int = 1
+    page: Int = 1,
     pageSize: Int = 25
   ): PaginatedFoos
 }
