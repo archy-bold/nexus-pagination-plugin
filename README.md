@@ -1,19 +1,5 @@
 # nexus-pagination-plugin
 
-A plugin for adding offset-based pagination to your nexus types
-
-## Installation
-
-```
-yarn add nexus-plugin-shield
-```
-or
-```
-npm install nexus-plugin-shield
-```
-
-## Pagination Plugin
-
 The pagination plugin provides a new method on the object definition builder, enabling paginated associations between types, following the offset-based pagination standard defined below.
 
 ## Offset-Based Pagination Standard
@@ -34,6 +20,16 @@ A paginated query field should return a type that contains the following:
   * `page`
   * `nextPage`
   * `totalPages`
+
+## Installation
+
+```
+yarn add nexus-plugin-shield
+```
+or
+```
+npm install nexus-plugin-shield
+```
 
 ## Setup
 
