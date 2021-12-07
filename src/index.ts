@@ -145,10 +145,10 @@ export const paginationPlugin = (config: PaginationPluginOptions = {}) => {
 
             if (!builder.hasType(generatedTypeName)) {
               builder.addType(
-                objectType({
+                objectType({ 
                   name: generatedTypeName,
                   definition(t2) {
-                    t2.nonNull.list.field('results', {
+                    t2.nonNull.list.nonNull.field('results', {
                       type: fieldConfig.type,
                       description: `Collection of ${fieldName}`,
                     });
