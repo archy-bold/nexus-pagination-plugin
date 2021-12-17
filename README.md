@@ -1,6 +1,22 @@
 # nexus-pagination-plugin
 
-The pagination plugin provides a new method on the object definition builder, enabling paginated associations between types, following the offset-based pagination standard defined below.
+<br />
+<p align="center">
+  <a href="https://echobind.com">
+    <img src="https://camo.githubusercontent.com/d22763c73585cf5d4cf87534659689c2a6b3f214/68747470733a2f2f7265732d332e636c6f7564696e6172792e636f6d2f6372756e6368626173652d70726f64756374696f6e2f696d6167652f75706c6f61642f635f6c7061642c685f3235362c775f3235362c665f6175746f2c715f6175746f3a65636f2f76313439393437333135312f68326b3233696f6f3479687230676a746f636d792e6a7067" alt="Logo" width="80" height="80">
+  </a>
+
+  <h3 align="center">nexus-pagination-plugin</h3>
+</p>
+<div align="center">
+  <a href="https://www.npmjs.com/package/nexus-pagination-plugin">
+    <img alt="NPM version." src="https://img.shields.io/npm/v/nexus-pagination-plugin" />
+  </a>
+  <img alt="License." src="https://img.shields.io/github/license/echobind/react-native-template">
+</div>
+<hr style="margin-bottom:30px;" >
+
+This pagination plugin provides a new method on the object definition builder, enabling paginated associations between types, following the offset-based pagination standard defined below.
 
 ## Offset-Based Pagination Standard
 
@@ -35,7 +51,7 @@ npm install nexus-plugin-shield
 
 ```ts
 import { makeSchema} from 'nexus';
-import { paginationPlugin } from 'nexus-pagination-plugin';
+import { paginationPlugin } from '@echobind/nexus-pagination-plugin';
 
 export const schema = makeSchema({
   // ... types, etc,

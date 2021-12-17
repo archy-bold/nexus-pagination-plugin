@@ -1,11 +1,14 @@
 {
   "name": "nexus-pagination-plugin",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A plugin for adding offset-based pagination to your nexus types",
   "repository": "https://github.com/echobind/nexus-pagination-plugin",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "author": "Echobind",
   "license": "MIT",
+  "scripts": {
+    "build": "tsc -p ."
+  },
   "dependencies": {
     "nexus": "1.0.0"
   },

@@ -1,3 +1,6 @@
 node_modules
 dist
+.eslintrc.js
+tsconfig.json
+src
 yarn-error.log
