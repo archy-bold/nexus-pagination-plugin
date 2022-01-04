@@ -72,7 +72,13 @@ interface PaginationPluginOptions extends SharedPluginOptions {
   getGeneratedTypename?: (targetTypeName: string) => string;
 }
 
-type PaginationFieldPluginOptions = SharedPluginOptions;
+interface PaginationFieldPluginOptions extends SharedPluginOptions {
+  /**
+   * Use a different name for the generated type for a specific field
+   * @default Paginated{fieldName}s or something else if getGeneratedTypename is defined
+   */
+  generatedTypename?: string;
+};
 
 const DEFAULT_PAGE_SIZE = 25;
 
@@ -141,7 +147,7 @@ export const paginationPlugin = (config: PaginationPluginOptions = {}) => {
                 ? fieldConfig.type
                 : (fieldConfig.type.name as string);
 
-            const generatedTypeName = getGeneratedTypename(targetTypeName);
+            const generatedTypeName = fieldConfig.generatedTypename || getGeneratedTypename(targetTypeName);
 
             if (!builder.hasType(generatedTypeName)) {
               builder.addType(

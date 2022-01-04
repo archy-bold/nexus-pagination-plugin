@@ -249,3 +249,19 @@ paginationPlugin({
   getGeneratedTypename: (targetTypename) => `${targetTypename}sPaginated`
 })
 ```
+
+### `generatedTypename: string`
+
+Used to specify a different generated typename for a specific field. Defaults to `Paginated${targetTypename}s` or whatever is defined by `getGeneratedTypename`
+
+Usage:
+
+```ts
+export const FinishesQuery = queryField((t) => {
+  t.paginatedQueryResult('finishes', {
+    type: 'Finish',
+    // ... any additional query fields
+    generatedTypename: 'PaginatedFinishes'
+  })
+})
+```
