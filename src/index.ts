@@ -97,7 +97,7 @@ export const paginationPlugin = (config: PaginationPluginOptions = {}) => {
     fieldDefTypes: [
       // Add PaginatedQueryFieldConfig to generated types
       printedGenTypingImport({
-        module: 'node_modules/nexus-pagination-plugin/dist/index.d.ts',
+        module: 'nexus-pagination-plugin',
         bindings: ['PaginatedQueryFieldConfig'],
       }),
     ],
