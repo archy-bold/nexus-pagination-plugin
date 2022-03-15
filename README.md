@@ -51,7 +51,7 @@ npm install nexus-pagination-plugin
 
 ```ts
 import { makeSchema} from 'nexus';
-import { paginationPlugin } from '@echobind/nexus-pagination-plugin';
+import { paginationPlugin } from 'nexus-pagination-plugin';
 
 export const schema = makeSchema({
   // ... types, etc,
