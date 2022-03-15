@@ -40,11 +40,11 @@ A paginated query field should return a type that contains the following:
 ## Installation
 
 ```
-yarn add nexus-plugin-shield
+yarn add nexus-pagination-plugin
 ```
 or
 ```
-npm install nexus-plugin-shield
+npm install nexus-pagination-plugin
 ```
 
 ## Setup
