@@ -78,7 +78,7 @@ const paginationPlugin = (config = {}) => {
                         resolve: (...props) => {
                             const [root, args, context, info] = props;
                             const { page, pageSize } = args;
-                            const skip = (page - 1) * pageSize;
+                            const skip = ((page !== null && page !== void 0 ? page : 1) - 1) * pageSize;
                             const take = pageSize;
                             const paginationParams = {
                                 skip,

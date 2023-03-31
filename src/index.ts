@@ -174,7 +174,7 @@ export const paginationPlugin = (config: PaginationPluginOptions = {}) => {
               resolve: (...props) => {
                 const [root, args, context, info] = props as any;
                 const { page, pageSize } = args;
-                const skip = (page - 1) * pageSize;
+                const skip = ((page ?? 1) - 1) * pageSize;
                 const take = pageSize;
 
                 const paginationParams = {
